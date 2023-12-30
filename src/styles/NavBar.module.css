@@ -8,6 +8,10 @@
   color: white;
 }
 
+.NavLink:hover {
+  color: #4b0a58;
+}
+
 .Active i {
   color: #ff0099;
 }
