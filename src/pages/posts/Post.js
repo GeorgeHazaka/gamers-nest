@@ -140,7 +140,14 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
-          {bookmark_id ? (
+          {is_owner ? (
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
+            >
+              <i className="fa-regular fa-bookmark" />
+            </OverlayTrigger>
+          ) : bookmark_id ? (
             <span onClick={handleUnbookmark}>
               <i className={`fa-solid fa-bookmark ${styles.Bookmark}`} />
             </span>
