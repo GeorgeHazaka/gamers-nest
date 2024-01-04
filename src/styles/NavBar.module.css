@@ -3,13 +3,18 @@
   border: 1px solid rgb(31, 31, 163);
 }
 
+.NavIcon {
+  height: 100px;
+  width: 100px;
+}
+
 .NavLink {
   padding: 5px;
   color: white;
 }
 
 .NavLink:hover {
-  color: #4b0a58;
+  color: #ff0099;
 }
 
 .Active i {
