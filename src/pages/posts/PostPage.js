@@ -30,7 +30,6 @@ function PostPage() {
         ]);
         setPost({ results: [post] });
         setComments(comments);
-        console.log(post);
       } catch (err) {
         console.log(err);
       }
@@ -43,7 +42,7 @@ function PostPage() {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles for mobile</p>
-        <Post {...post.results[0]} setPosts={setPost} />
+        <Post {...post.results[0]} setPosts={setPost} postPage />
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
@@ -58,7 +57,12 @@ function PostPage() {
           ) : null}
           {comments.results.length ? (
             comments.results.map((comment) => (
-              <Comment key={comment.id} {...comment} />
+              <Comment
+                key={comment.id}
+                {...comment}
+                setPost={setPost}
+                setComments={setComments}
+              />
             ))
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>

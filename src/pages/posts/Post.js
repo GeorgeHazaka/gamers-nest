@@ -3,10 +3,10 @@ import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Post = (props) => {
   const {
@@ -17,7 +17,6 @@ const Post = (props) => {
     comments_count,
     likes_count,
     like_id,
-    bookmark_id,
     title,
     content,
     image,
@@ -67,38 +66,6 @@ const Post = (props) => {
         results: prevPosts.results.map((post) => {
           return post.id === id
             ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-            : post;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleBookmark = async () => {
-    try {
-      const { data } = await axiosRes.post("/bookmarks/", { post: id });
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, bookmark_id: data.id }
-            : post;
-        }),
-      }));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  const handleUnbookmark = async () => {
-    try {
-      await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, bookmark_id: null }
             : post;
         }),
       }));
@@ -161,30 +128,6 @@ const Post = (props) => {
             <i className="far fa-comments" />
           </Link>
           {comments_count}
-          {is_owner ? (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>You can't bookmark your own post!</Tooltip>}
-            >
-              <i className="fa-regular fa-bookmark" />
-            </OverlayTrigger>
-          ) : bookmark_id ? (
-            <span onClick={handleUnbookmark}>
-              <i className={`fa-solid fa-bookmark ${styles.Bookmark}`} />
-            </span>
-          ) : currentUser ? (
-            <span onClick={handleBookmark}>
-              <i className={`fa-regular fa-bookmark ${styles.BookmarkOutline}`} />
-            </span>
-          ) : (
-            <OverlayTrigger
-              placement="top"
-              overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
-            >
-              <i className="fa-regular fa-bookmark" />
-            </OverlayTrigger>
-          )}
-
         </div>
       </Card.Body>
     </Card>
