@@ -13,7 +13,7 @@ h5 {
 
 .Heart,
 .Bookmark {
-  color: #ff0099;
+  color: #ff58bc;
 }
 
 .Heart:hover,
@@ -23,5 +23,5 @@ h5 {
 
 .HeartOutline:hover,
 .BookmarkOutline:hover {
-  color: #ff0099;
+  color: #ff58bc;
 }
