@@ -16,7 +16,8 @@ h5 {
   color: #ff0099;
 }
 
-.Heart:hover {
+.Heart:hover,
+.Bookmark:hover {
   color: #2142b2;
 }
 
