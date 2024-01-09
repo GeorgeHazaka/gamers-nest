@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from "../assets/gamers-nest.png";
+import logo from "../assets/gamers-nest-logo.png";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import {
@@ -38,13 +38,6 @@ const NavBar = () => {
 
   const loggedInIcons = (
     <>
-      {/* <NavLink
-        className={styles.NavLink}
-        activeClassName={styles.Active}
-        to="/feed"
-      >
-        <i className="fas fa-stream"></i>Feed
-      </NavLink> */}
       <NavLink
         className={styles.NavLink}
         activeClassName={styles.Active}
@@ -106,8 +99,7 @@ const NavBar = () => {
             <img
               src={logo}
               alt="logo"
-              height="65"
-              width="75"
+              height="50"
             />
           </Navbar.Brand>
         </NavLink>
