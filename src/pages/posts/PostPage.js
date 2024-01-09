@@ -25,6 +25,7 @@ function PostPage() {
   const profile_image = currentUser?.profile_image;
   const [comments, setComments] = useState({ results: [] });
 
+  // Fetch post and comments data on component mount
   useEffect(() => {
     const handleMount = async () => {
       try {
@@ -32,6 +33,7 @@ function PostPage() {
           axiosReq.get(`/posts/${id}`),
           axiosReq.get(`/comments/?post=${id}`),
         ]);
+        // Update the state with fetched post and comments data
         setPost({ results: [post] });
         setComments(comments);
       } catch (err) {
@@ -39,6 +41,7 @@ function PostPage() {
       }
     };
 
+    // Call the function to fetch data on mount
     handleMount();
   }, [id]);
 

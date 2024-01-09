@@ -3,16 +3,20 @@ import axios from "axios";
 import { axiosReq, axiosRes } from "../api/axiosDefaults";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
+// Contexts for current user data and setter function
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
 
+// Custom hooks for accessing current user and setter function
 export const useCurrentUser = () => useContext(CurrentUserContext);
 export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 
+// Provider component for managing current user state
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
 
+  // Function to fetch user data on component mount
   const handleMount = async () => {
     try {
       const { data } = await axiosRes.get("dj-rest-auth/user/");
@@ -22,10 +26,12 @@ export const CurrentUserProvider = ({ children }) => {
     }
   };
 
+  // Effect to fetch user data on component mount
   useEffect(() => {
     handleMount();
   }, []);
 
+  // Memoized function to set up axios interceptors
   useMemo(() => {
     axiosReq.interceptors.request.use(
       async (config) => {
@@ -68,6 +74,7 @@ export const CurrentUserProvider = ({ children }) => {
     );
   }, [history]);
 
+  // Provide the current user data and setter function to the context
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <SetCurrentUserContext.Provider value={setCurrentUser}>

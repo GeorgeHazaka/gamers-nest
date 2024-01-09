@@ -19,9 +19,13 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function PostCreateForm() {
+  // Redirect user if not logged in
   useRedirect("loggedOut");
+
+  // State for form errors
   const [errors, setErrors] = useState({});
 
+  // State for post data
   const [postData, setPostData] = useState({
     title: "",
     content: "",
@@ -29,9 +33,12 @@ function PostCreateForm() {
   });
   const { title, content, image } = postData;
 
+  // Reference to image input for handling file uploads
   const imageInput = useRef(null);
+  // Access the history object for navigation
   const history = useHistory();
 
+  // Function to handle input changes in text fields
   const handleChange = (event) => {
     setPostData({
       ...postData,
@@ -39,6 +46,7 @@ function PostCreateForm() {
     });
   };
 
+  // Function to handle changes in the uploaded image
   const handleChangeImage = (event) => {
     if (event.target.files.length) {
       URL.revokeObjectURL(image);
@@ -49,16 +57,20 @@ function PostCreateForm() {
     }
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
 
+    // Create a FormData object for sending the data to the server
+    const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
     formData.append("image", imageInput.current.files[0]);
 
     try {
+      // Send a POST request to create a new post
       const { data } = await axiosReq.post("/posts/", formData);
+      // Redirect to the newly created post
       history.push(`/posts/${data.id}`);
     } catch (err) {
       console.log(err);
@@ -68,6 +80,7 @@ function PostCreateForm() {
     }
   };
 
+  // JSX for the text fields and buttons
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -113,6 +126,7 @@ function PostCreateForm() {
     </div>
   );
 
+  // JSX for the entire form
   return (
     <Form onSubmit={handleSubmit}>
       <hr />

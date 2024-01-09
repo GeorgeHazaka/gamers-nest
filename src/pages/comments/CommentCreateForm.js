@@ -12,21 +12,26 @@ function CommentCreateForm(props) {
   const { post, setPost, setComments, profileImage, profile_id } = props;
   const [content, setContent] = useState("");
 
+  // Function to handle content changes in the textarea
   const handleChange = (event) => {
     setContent(event.target.value);
   };
 
+  // Function to handle comment submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Send a request to create a new comment
       const { data } = await axiosRes.post("/comments/", {
         content,
         post,
       });
+      // Update the comments list with the new comment
       setComments((prevComments) => ({
         ...prevComments,
         results: [data, ...prevComments.results],
       }));
+      // Update the post with the increased comments count
       setPost((prevPost) => ({
         results: [
           {
@@ -35,6 +40,7 @@ function CommentCreateForm(props) {
           },
         ],
       }));
+      // Clear the content for the next comment
       setContent("");
     } catch (err) {
       console.log(err);
@@ -42,6 +48,7 @@ function CommentCreateForm(props) {
   };
 
   return (
+    // Comment creation form
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
         <InputGroup>

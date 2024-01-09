@@ -24,22 +24,30 @@ function PostsPage({ message, filter = "" }) {
 
   const [query, setQuery] = useState("");
 
+  // Fetch posts data based on filter and search query
   useEffect(() => {
+    // Define an async function to fetch posts
     const fetchPosts = async () => {
       try {
+        // Make a GET request to fetch posts data
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
+        // Set hasLoaded to true to indicate that the data has loaded
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
       }
     };
 
+    // Reset hasLoaded to false when the effect runs
     setHasLoaded(false);
+
+    // Use a timer to delay the fetchPosts call by 1000 milliseconds (1 second)
     const timer = setTimeout(() => {
       fetchPosts();
     }, 1000);
 
+    // Cleanup function to clear the timer
     return () => {
       clearTimeout(timer);
     };

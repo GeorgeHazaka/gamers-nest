@@ -19,7 +19,9 @@ import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 
 function SignInForm() {
-  const setCurrentUser = useSetCurrentUser()
+  // State for sign-in form data and errors
+  const setCurrentUser = useSetCurrentUser();
+  // Custom hook to redirect user if already logged in
   useRedirect("loggedIn");
 
   const [signInData, setSignInData] = useState({
@@ -30,11 +32,14 @@ function SignInForm() {
 
   const [errors, setErrors] = useState({});
 
+  // React Router history for navigation
   const history = useHistory();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Send a request to the login endpoint
       const { data } = await axios.post("/dj-rest-auth/login/", signInData);
+      // Set the current user and navigate back
       setCurrentUser(data.user);
       history.goBack();
     } catch (err) {
@@ -42,6 +47,7 @@ function SignInForm() {
     }
   };
 
+  // Function to update form data on input change
   const handleChange = (event) => {
     setSignInData({
       ...signInData,

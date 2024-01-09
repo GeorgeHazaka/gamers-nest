@@ -24,11 +24,16 @@ const Comment = (props) => {
 
   const [showEditForm, setShowEditForm] = useState(false);
   const currentUser = useCurrentUser();
+
+  // Check if the current user is the owner of the comment
   const is_owner = currentUser?.username === owner;
 
+  // Function to handle comment deletion
   const handleDelete = async () => {
     try {
+      // Send a request to delete the comment
       await axiosRes.delete(`/comments/${id}/`);
+      // Update post comments count
       setPost((prevPost) => ({
         results: [
           {
@@ -38,6 +43,7 @@ const Comment = (props) => {
         ],
       }));
 
+      // Update comments list by removing the deleted comment
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
@@ -45,9 +51,12 @@ const Comment = (props) => {
     } catch (err) { }
   };
 
+  // Function to handle comment liking
   const handleLike = async () => {
     try {
+      // Send a request to like the comment
       const { data } = await axiosRes.post("/comment_likes/", { comment: id });
+      // Update comments list with the new like information
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {
@@ -61,9 +70,12 @@ const Comment = (props) => {
     }
   };
 
+  // Function to handle comment unliking
   const handleUnlike = async () => {
     try {
+      // Send a request to unlike the comment
       await axiosRes.delete(`/comment_likes/${commentlike_id}/`);
+      // Update comments list by removing the like information
       setComments((prevComments) => ({
         ...prevComments,
         results: prevComments.results.map((comment) => {

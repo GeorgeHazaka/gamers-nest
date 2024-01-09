@@ -28,24 +28,31 @@ const UsernameForm = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  // Set the initial username value on component mount
   useEffect(() => {
+    // Check if the current user's profile ID matches the ID from the URL
     if (currentUser?.profile_id?.toString() === id) {
       setUsername(currentUser.username);
     } else {
+      // Redirect to home if the user is not authorized
       history.push("/");
     }
   }, [currentUser, history, id]);
 
+  // Handle form submission to update the username
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Make a PUT request to update the username
       await axiosRes.put("/dj-rest-auth/user/", {
         username,
       });
+      // Update the username in the current user context
       setCurrentUser((prevUser) => ({
         ...prevUser,
         username,
       }));
+      // Navigate back to the previous page
       history.goBack();
     } catch (err) {
       console.log(err);
@@ -53,6 +60,7 @@ const UsernameForm = () => {
     }
   };
 
+  // JSX for rendering the UsernameForm component
   return (
     <Row>
       <Col className="py-2 mx-auto text-center" md={6}>

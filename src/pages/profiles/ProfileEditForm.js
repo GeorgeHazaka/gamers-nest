@@ -20,10 +20,15 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
+  // Retrieve current user and set current user functions from context
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+
+  // Retrieve profile id from URL parameters and history object for navigation
   const { id } = useParams();
   const history = useHistory();
+
+  // Create a ref for the image file input
   const imageFile = useRef();
 
   const [profileData, setProfileData] = useState({
@@ -37,6 +42,7 @@ const ProfileEditForm = () => {
 
   useEffect(() => {
     const handleMount = async () => {
+      // Check if the current user matches the profile id
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
@@ -44,9 +50,11 @@ const ProfileEditForm = () => {
           setProfileData({ name, content, image });
         } catch (err) {
           console.log(err);
+          // Redirect to home page if there is an error fetching data
           history.push("/");
         }
       } else {
+        // Redirect to home page if the current user doesn't match the profile id
         history.push("/");
       }
     };
@@ -54,6 +62,7 @@ const ProfileEditForm = () => {
     handleMount();
   }, [currentUser, history, id]);
 
+  // Handle input changes
   const handleChange = (event) => {
     setProfileData({
       ...profileData,
@@ -61,18 +70,22 @@ const ProfileEditForm = () => {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
     formData.append("content", content);
 
+    // If a new image file is selected, append it to the form data
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
     }
 
     try {
+      // Send a PUT request to update the profile
       const { data } = await axiosReq.put(`/profiles/${id}/`, formData);
+      // Update the current user's profile image in the context
       setCurrentUser((currentUser) => ({
         ...currentUser,
         profile_image: data.image,
@@ -114,6 +127,7 @@ const ProfileEditForm = () => {
     </>
   );
 
+  // JSX for the ProfileEditForm component
   return (
     <Form onSubmit={handleSubmit}>
       <Row>

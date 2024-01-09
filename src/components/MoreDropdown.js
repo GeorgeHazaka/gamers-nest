@@ -16,6 +16,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
   />
 ));
 
+// MoreDropdown component with options for edit and delete
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   return (
     <Dropdown className="ml-auto" drop="left">
@@ -44,6 +45,7 @@ export const MoreDropdown = ({ handleEdit, handleDelete }) => {
   );
 };
 
+// ProfileEditDropdown component with options for editing profile details
 export function ProfileEditDropdown({ id }) {
   const history = useHistory();
   return (

@@ -19,6 +19,7 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useRedirect } from "../../hooks/useRedirect";
 
 const SignUpForm = () => {
+  // Custom hook to redirect user if already logged in
   useRedirect("loggedIn");
   const [signUpData, setSignUpData] = useState({
     username: "",
@@ -38,10 +39,13 @@ const SignUpForm = () => {
     });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Send a request to the registration endpoint
       await axios.post("/dj-rest-auth/registration/", signUpData);
+      // Redirect to the sign-in page on success
       history.push("/signin");
     } catch (err) {
       setErrors(err.response?.data);

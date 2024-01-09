@@ -3,10 +3,12 @@ import styles from "../../styles/Profile.module.css";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 
+// Profile component receives props as an argument
 const Profile = (props) => {
   const { profile, mobile, imageSize = 55 } = props;
   const { id, image, owner } = profile;
 
+  // Render the Profile component
   return (
     <div
       className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}

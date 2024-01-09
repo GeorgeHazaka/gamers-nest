@@ -16,6 +16,7 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 const UserPasswordForm = () => {
+  // History object to navigate back
   const history = useHistory();
   const { id } = useParams();
   const currentUser = useCurrentUser();
@@ -28,6 +29,7 @@ const UserPasswordForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Handle input changes in the form
   const handleChange = (event) => {
     setUserData({
       ...userData,
@@ -45,6 +47,7 @@ const UserPasswordForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Make a POST request to change the user's password
       await axiosRes.post("/dj-rest-auth/password/change/", userData);
       history.goBack();
     } catch (err) {
@@ -53,6 +56,7 @@ const UserPasswordForm = () => {
     }
   };
 
+  // JSX for rendering the UserPasswordForm component
   return (
     <Row>
       <Col className="py-2 mx-auto text-center" md={6}>

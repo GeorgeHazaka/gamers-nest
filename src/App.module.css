@@ -1,6 +1,6 @@
 .App {
   font-family: "DM Sans", sans-serif;
-  background-color: #1A1717;
+  background-color: #17181a;
   min-height: 100vh;
 }
 
@@ -25,6 +25,10 @@
   max-height: 40vh;
   max-width: 100%;
   object-fit: contain;
+}
+
+.WhiteFont {
+  color: white;
 }
 
 * {

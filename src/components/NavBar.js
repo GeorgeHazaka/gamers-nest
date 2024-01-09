@@ -15,10 +15,13 @@ const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
+  // Toggle logic for handling outside clicks to close the dropdown
   const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
+  // Function to handle user sign-out
   const handleSignOut = async () => {
     try {
+      // Use axios to send a logout request to the backend
       await axios.post("dj-rest-auth/logout/");
       setCurrentUser(null);
     } catch (err) {
@@ -26,6 +29,7 @@ const NavBar = () => {
     }
   };
 
+  // JSX for the "Add Post" icon with a link to the create post page
   const addPostIcon = (
     <NavLink
       className={styles.NavLink}
@@ -36,6 +40,7 @@ const NavBar = () => {
     </NavLink>
   );
 
+  // JSX for icons when the user is logged in
   const loggedInIcons = (
     <>
       <NavLink
@@ -67,6 +72,8 @@ const NavBar = () => {
       </NavLink>
     </>
   );
+
+  // JSX for icons when the user is logged out
   const loggedOutIcons = (
     <>
       <NavLink
@@ -86,6 +93,7 @@ const NavBar = () => {
     </>
   );
 
+  // Main JSX for the entire Navbar component
   return (
     <Navbar
       expanded={expanded}

@@ -31,10 +31,12 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  // Function to navigate to the post edit page
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`);
   };
 
+  // Function to handle post deletion
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
@@ -44,6 +46,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post like
   const handleLike = async () => {
     try {
       const { data } = await axiosRes.post("/likes/", { post: id });
@@ -60,6 +63,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle post unlike
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -76,6 +80,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle bookmarking a post
   const handleBookmark = async () => {
     try {
       const { data } = await axiosRes.post("/bookmarks/", { post: id });
@@ -92,6 +97,7 @@ const Post = (props) => {
     }
   };
 
+  // Function to handle removing a bookmark from a post
   const handleUnbookmark = async () => {
     try {
       await axiosRes.delete(`/bookmarks/${bookmark_id}/`);
@@ -109,6 +115,7 @@ const Post = (props) => {
   };
 
   return (
+    // Post card with details and actions
     <Card className={styles.Post}>
       <Card.Body>
         <Media className="align-items-center justify-content-between">

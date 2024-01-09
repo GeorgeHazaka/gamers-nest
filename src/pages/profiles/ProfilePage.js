@@ -23,16 +23,20 @@ import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
+  // State to manage the loaded status and profile posts
   const [hasLoaded, setHasLoaded] = useState(false);
   const [profilePosts, setProfilePosts] = useState({ results: [] });
 
+  // Retrieve the profile id from URL parameters
   const { id } = useParams();
 
+  // Retrieve functions for managing profile data from context
   const setProfileData = useSetProfileData();
   const { pageProfile } = useProfileData();
 
   const [profile] = pageProfile.results;
 
+  // Fetch profile data and posts on component mount
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -41,6 +45,8 @@ function ProfilePage() {
             axiosReq.get(`/profiles/${id}/`),
             axiosReq.get(`/posts/?owner__profile=${id}`),
           ]);
+
+        // Update profile data in the context
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
@@ -54,6 +60,7 @@ function ProfilePage() {
     fetchData();
   }, [id, setProfileData]);
 
+  // JSX for displaying the main profile information
   const mainProfile = (
     <>
       {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
@@ -79,6 +86,7 @@ function ProfilePage() {
     </>
   );
 
+  // JSX for displaying the main profile posts
   const mainProfilePosts = (
     <>
       <hr />
@@ -103,6 +111,7 @@ function ProfilePage() {
     </>
   );
 
+  // JSX for the entire ProfilePage component
   return (
     <>
       <hr />
