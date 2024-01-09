@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import styles from "../styles/Asset.module.css";
 
 // Functional component representing an Asset (with optional Spinner, image, and message)
