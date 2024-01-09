@@ -43,7 +43,7 @@ function CommentCreateForm(props) {
       // Clear the content for the next comment
       setContent("");
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 

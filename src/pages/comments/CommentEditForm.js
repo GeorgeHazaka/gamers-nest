@@ -39,7 +39,7 @@ function CommentEditForm(props) {
       // Hide the edit form after successful submission
       setShowEditForm(false);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
