@@ -117,7 +117,7 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
 
 - #### Sign Out
  - When licked, the user will get signed out.
- - Then the user will be redirected to Sign In page.
+ - Then the user will be redirected to Home page.
 
 - #### Navbar Toggler Button
 
@@ -184,3 +184,53 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
   + **Tasks:** click on the 'Sign out' button located in the navbar.
 
 ## Testing
+
+- I have tested that the site works in different browsers: Firefox, Brave, Chrome, Microsoft Edge.
+- I confirm that all inputs and buttons work properly.
+
+### Manual Testing
+
+- #### Navbar Buttons Testing
+
+    | Feature          | When The Following Is Done | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **G-Logo**      | G-logo button is clicked | Directs to Home page | Clicked G-logo button | Directed to Home page |
+    | **Home**        | Home button is clicked | Directs to Home page | Clicked Home button | Directed to Home page |
+    | **Sign in**   | Sign in is clicked | Directs to Sign in page | Clicked Sign in button | Directed to Sign in page |
+    | **Sign up**   | Sign up is clicked | Directs to Sign up page | Clicked Sign up button | Directed to Sign up page |
+    | **Liked**   | Liked is clicked | Directs to Liked page | Clicked Liked button | Directed to Liked page |
+    | **Saved** | Saved button is clicked | Directs to Saved page | Clicked Saved button | Directed to Saved page |
+    | **Sign out** | Sign out button is clicked | Signs user out and redirects to Home page | Clicked Sign out button | Signed user out and reirected to Home page |
+    | **Profile** | Profile button is clicked | Directs to Profile page | Clicked Profile button | Directed to Profile page |
+    | **Add post** | Add post button is clicked | Directs to Post Create page | Clicked Add post button | Directed to Post Create page |
+
+- #### Forms Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Sign Up**      | All fields are filled and Sign Up button is clicked | Creates account | Clicked Sign Up button | Account created |
+    | **Sign In**      | All fields are filled and Sign In button is clicked | Logs in | Clicked Sign In button | Logged in |
+    | **Add post**     | All fields are filled and Create button is clicked | Creates a post | Clicked Create button | Post Created |
+    | **Edit post**    | All fields are filled and Save button is clicked | Updates the post | Clicked Save button | Post updated |
+    | **Edit Profile** | All fields are filled and Save button is clicked | Updates the profile | Clicked Save button | profile updated |
+
+- #### Sign In/Up Errors Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Sign In**      | Username and/or Password is/are wrong and clicks Sign In | Returns this message "Unable to log in with provided credentials" | Username and/or Password was/were wrong and clicked Sign In | Returned this message "Unable to log in with provided credentials" |
+    | **Sign Up**      | The two password fields don't match and clicks Sign Up | Returns this message "The two password fields didn't match" | The two password fields didn't match and clicked Sign Up | Returned this message "The two password fields didn't match" |
+
+- #### Post Testing
+
+    | Feature          | When The Following Is Completed | Expect | Action | Result |
+    | ---------------- | ------ | ------ | ------ | ------ |
+    | **Like a post**       | Clicks Heart icon | Post will be liked and Likes amount + 1 | Clicked Heart icon | Post is liked and Likes amount + 1 |
+    | **Bookmark a post**       | Clicks Bookmark icon | Post will be bookmarked | Clicked Bookmark icon | Post is bookmark |
+    | **Comment on a post** | Clicks Comment icon, fill the form and clicks on Post | Comment will be created and Comments amount + 1 | Clicked Comment icon, filled the form and clicked on Post | Comment is created and Comments amount + 1 |
+    | **Unlike a post**      | Clicks Heart icon again | Post will be unliked and Likes amount - 1 | Clicked Heart icon again | Post is unliked and Likes amount - 1 |
+    | **Unbookmark a post**      | Clicks Bookmark icon again | Post will be bookmarked | Clicked Bookmark icon again | Post is unbookmarked |
+    | **Like a comment**      | Clicks Heart icon | Comment will be liked | Clicked Heart icon | Comment is liked |
+    | **Unlike a comment**      | Clicks Heart icon again | Comment will be unliked | Clicked Heart icon again | Comment is unliked |
+    | **Edit a comment**      | Clicks Three Dots icon, chooses Edit icon and, fills the form and clicks on Save | Comment will be editted | Clicked Three Dots icon, chose Edit icon and, filled the form and clicked on Save | Comment is editted |
+    | **Delete a comment**      | Clicks Three Dots icon and chooses Delete icon | Comment will be deleted | Clicked Three Dots icon and chose Delete icon | Comment is deleted |
