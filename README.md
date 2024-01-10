@@ -1,102 +1,56 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Gamers Nest
 
-Welcome,
+![SEveral screen sizes devices showing how the website looks in each of them](readme_assets/gamers-nest-responsive-screens.png)
+## Project goals
+Gamers Nest is for all people who are interested in gaming, as you can:
+1) Share Your Game Moments: Gamers Nest is where gamers like you can post about your gaming adventures! Share your wins, funny moments, or just chat about your favorite games.
+2) Connect with Others: Like what others are posting? Give them a thumbs up and drop a comment. It's an awesome way to connect with fellow gamers and make new gaming buddies!
+3) Find out what games are buzzing in the community. Get recommendations, tips, and tricks from other gamers. Who knows, you might discover your next favorite game!
+4) Stay in the Loop: Your personalized gaming feed keeps you updated on what's happening. Don't miss out on cool posts or invites to game together.
+5) Easy to Use: Gamers Nest is super easy to use. Whether you're a pro gamer or just starting, posting and chatting with others is a piece of cake.
 
-This is the Code Institute student template for React apps on the Codeanywhere IDE. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.  
-DO NOT use this template if you are using the Gitpod IDE. Use the following command instead:  
-`npx create-react-app . --template git+https://github.com/Code-Institute-Org/cra-template-moments.git --use-npm`
+Here is the link to the [Gamers Nest](https://gamers-nest-27823b8a37a8.herokuapp.com/) project
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **31st August, 2023**
+This is the repository for the React frontend of TribeHub.
+The project also utilises a Django Rest Framework web API, the repository for which is located [here](https://github.com/GeorgeHazaka/drf-api-post)
 
-## Codeanywhere Reminders
+## Table of contents
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Admin Credentials
 
-To log into the Heroku toolbelt CLI:
+- username: george
+- password: password
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## User stories
+User stories and testing outcomes are documented in the `user_stories` worksheet of [this Google sheet](https://docs.google.com/spreadsheets/d/1TbuaklN0GnUuEC8N7yn4vkDDD2kgZLtuRsyB3VzDYZY/edit#gid=0)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Design
 
----
+### Colours
 
-Happy coding!
+- Three main colours were used in this website. The colours are:'
 
-# Getting Started with Create React App
+  ![#ff58bc pink color](readme_assets/pink.png)
+  ![#2142b2 dark-blue color](readme_assets/dark-blue.png)
+  ![#0080ff light-blue color](readme_assets/light-blue.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Background color is
 
-## Available Scripts
+  ![#17181a black-gray color](readme_assets/black-gray.png)
 
-In the project directory, you can run:
+### Fonts
+Google font is used for the project.
+The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
 
-### `npm install`
+## Features
 
-Installs the required npm packages.
+### Existing Features
 
-### `npm start`
+- #### The Header
 
-Runs the app in the development mode.\
-Open port 3000 to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Featured at the top of the page, the header shows the main headining of the website.
+  - The navigation links are to the right: 
+    1. YamYam, Menu, Book_a_tabale, Register, and Login when the user is not logged in.
+    ![Navbar logged out](documentation/navbar-logged-out.png)
+  - When the user is logged in, the navigations links become:YamYam, Menu, Book_a_table and Sign_out.
+    ![Navbar logged in](documentation/navbar-logged-in.png)
