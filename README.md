@@ -49,8 +49,138 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
 - #### The Header
 
   - Featured at the top of the page, the header shows the main headining of the website.
-  - The navigation links are to the right: 
-    1. YamYam, Menu, Book_a_tabale, Register, and Login when the user is not logged in.
-    ![Navbar logged out](documentation/navbar-logged-out.png)
-  - When the user is logged in, the navigations links become:YamYam, Menu, Book_a_table and Sign_out.
-    ![Navbar logged in](documentation/navbar-logged-in.png)
+  - The navigation links are: 
+    1. When user is logged in: Profile, Sign out, Saved, Liked, Home and Add post.
+    ![Navbar logged in](readme_assets/loggedin-navbar.png)
+    2. When the user is NOT logged in: Sign up, Sign in, Home
+    ![Navbar logged out](readme_assets/loggedout-navbar.png)
+
+- #### The Section
+
+- ##### Home Page
+  - The Home page has a search bar at the top.
+  - The Home page contains all the posts by all the users.
+
+  ![Home page](readme_assets/home-page.png)
+- #### Sign In Page
+  - The Sign In page is where the user signs in.
+  - The form contains Username and Password fields.
+
+  ![Sign In page](readme_assets/signin-page.png)
+- #### Sign Up Page
+  - The Sign Up page is where the user signs up
+  - The form contains Username, Password and Confirm Password fields.
+
+  ![Sign Up page](readme_assets/signup-page.png)
+- #### Liked Page
+  - The Liked page contains all the posts the user has liked.
+  - The user can Not like his own posts.
+
+  ![Liked page](readme_assets/liked-page.png)
+- #### Saved Page
+  - The Saved page contains all the posts the user has bookmarked.
+  - The user can even bookmark his own post.
+
+  ![Saved page](readme_assets/saved-page.png)
+- #### Add Post Page
+  - The Add Post page is where the user can create a post
+  - The form contains: Title, Content and Image.
+
+  ![Add Post page](readme_assets/add-post-page.png)
+- #### Profile Page
+  - The Profile page is where the user can a profile.
+  - The user can edit his own profile if logged in.
+  - The page contains: Profile name, bio, posts number, and all the post.
+
+  ![Profile page](readme_assets/profile-page.png)
+- #### Edit Profile Page
+  - The Edit Profile page is where the user can edit their profile
+
+  ![Edit Profile page](readme_assets/edit-profile.png)
+- #### Post Page
+  - The Post page is where the user view a post.
+  - The user can see a date of the post creation.
+  - The user can like a post if logged in.
+  - The user can see the amount of likes a post has.
+  - The user can bookmark a post if logged in.
+  - The user can comment on the post if logged in.
+  - The user can see the amount of comments a post has.
+  - The user can edit or delete the post if they own it.
+
+  ![Profile page](readme_assets/posts-page.png)
+- #### Comment Section
+  - The Comment section is where the user view the comments on a post.
+  - The user can edit or delete his own comment.
+  - The user can see a date of the comment creation.
+
+  ![Profile page](readme_assets/comment-and-edit.png)
+
+- #### Sign Out
+ - When licked, the user will get signed out.
+ - Then the user will be redirected to Sign In page.
+
+- #### Navbar Toggler Button
+
+  - It only appears when the user is using a device that has a width of 767 px or less.
+    ![Navbar toggler](readme_assets/navbar-toggler.png)
+
+  - When clicked, the navbar is shown, clicked again and navbar disappears.
+
+    ![Navbar toggler clicked](readme_assets/navbar-toggler-clicked.png)
+
+### Features Left To Implement
+
+- Add followers section so that user can follow each other.
+- Allow users to share a post with friends via other social medias.
+- Allow users to vote on a games for various reasons.
+- Add Live Streaming.
+- Add a page where users can buy games from.
+
+## User Experience
+
++ **User Story 001:** as a user I want to create an account.
+  + **Tasks:** click on 'Sign up' button in the navbar, and fill the form, then click 'Sign Up' button located under the form.
++ **User Story 002:** as a user I want to log in to my account.
+  + **Tasks:** click on 'Sign in' in the navbar, and fill the form, then click 'Sign In' button located under the form.
++ **User Story 003:** as a user I want to go th the Home page.
+  + **Tasks:** click on 'G' logo, or click on 'Home' in the navbar.
++ **User Story 004:** as a user I want to create a post.
+  + **Tasks:** click on 'Add post' in the navbar and fill the form.
++ **User Story 005:** as a user I want to edit a post.
+  + **Tasks:** click on the Three Dots on the right side of each post you own. Then click on the Edit icon.
++ **User Story 006:** as a user I want to delete a post.
+  + **Tasks:** click on the Three Dots on the right side of each post you own. Then click on the Delete icon.
++ **User Story 007:** as a user I want to like a post.
+  + **Tasks:** click on the Heart icon located in the bottom of any post.
++ **User Story 008:** as a user I want to unlike a post.
+  + **Tasks:** click on the Heart icon again.
++ **User Story 009:** as a user I want to bookmark a post.
+  + **Tasks:** click on the Bookmark icon located in the bottom of any post.
++ **User Story 010:** as a user I want to remove bookmark on a post.
+  + **Tasks:** click on the Bookmark icon again.
++ **User Story 011:** as a user I want to comment on a post.
+  + **Tasks:** click on the Comment icon located in the bottom of any post.
++ **User Story 012:** as a user I want to like a comment on a post.
+  + **Tasks:** click on the Heart icon located in the right of any comment.
++ **User Story 013:** as a user I want to unlike a comment on a post.
+  + **Tasks:** click on the Heart icon again.
++ **User Story 014:** as a user I want to edit a comment on a post.
+  + **Tasks:** click on the Three Dots on the right side of each comment you own. Then click on the Edit icon.
++ **User Story 015:** as a user I want to delete a comment on a post.
+  + **Tasks:** click on the Three Dots on the right side of each comment you own. Then click on the Delete icon.
++ **User Story 016:** as a user I want to see my liked posts.
+  + **Tasks:** click on 'Liked' button in the navbar.
++ **User Story 017:** as a user I want to see my bookmarked posts.
+  + **Tasks:** click on 'Saved' button in the navbar.
++ **User Story 017:** as a user I want to view a profile detaills.
+  + **Tasks:** click on any user's profile located in the posts.
++ **User Story 018:** as a user I want to edit my profile detaills.
+  + **Tasks:** click on the 'Profile' button in the navbar, then click on the Three Dots, choose Edit Profile.
++ **User Story 019:** as a user I want to change my Username.
+  + **Tasks:** click on the 'Profile' button in the navbar, then click on the Three Dots, and choose Change Password.
++ **User Story 020:** as a user I want to change my Password.
+  + **Tasks:** click on the 'Profile' button in the navbar, then click on the Three Dots, and choose Change Password.
++ **User Story 021:** as a user I want to sign out.
+  + **Tasks:** click on the 'Sign out' button located in the navbar.
+
+## Testing
