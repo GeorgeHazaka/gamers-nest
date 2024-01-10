@@ -182,6 +182,8 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
   + **Tasks:** click on the 'Profile' button in the navbar, then click on the Three Dots, and choose Change Password.
 + **User Story 021:** as a user I want to sign out.
   + **Tasks:** click on the 'Sign out' button located in the navbar.
++ **User Story 022:** as a user I want to search for a post.
+  + **Tasks:** click on the Search bar at the top, and write the desired keywords.
 
 ## Testing
 
@@ -234,3 +236,5 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
     | **Unlike a comment**      | Clicks Heart icon again | Comment will be unliked | Clicked Heart icon again | Comment is unliked |
     | **Edit a comment**      | Clicks Three Dots icon, chooses Edit icon and, fills the form and clicks on Save | Comment will be editted | Clicked Three Dots icon, chose Edit icon and, filled the form and clicked on Save | Comment is editted |
     | **Delete a comment**      | Clicks Three Dots icon and chooses Delete icon | Comment will be deleted | Clicked Three Dots icon and chose Delete icon | Comment is deleted |
+
+### Validator Testing
