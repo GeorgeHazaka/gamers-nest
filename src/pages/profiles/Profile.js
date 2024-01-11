@@ -1,7 +1,9 @@
 import React from "react";
-import styles from "../../styles/Profile.module.css";
+
 import { Link } from "react-router-dom";
+
 import Avatar from "../../components/Avatar";
+import styles from "../../styles/Profile.module.css";
 
 // Profile component receives props as an argument
 const Profile = (props) => {

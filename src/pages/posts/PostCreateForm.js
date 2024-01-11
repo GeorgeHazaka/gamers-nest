@@ -1,22 +1,21 @@
 import React, { useRef, useState } from "react";
 
-import Form from "react-bootstrap/Form";
+import { Image } from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
-
-import Upload from "../../assets/upload.png";
-
-import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 import { axiosReq } from "../../api/axiosDefaults";
+import appStyles from "../../App.module.css";
+import Upload from "../../assets/upload.png";
+import Asset from "../../components/Asset";
 import { useRedirect } from "../../hooks/useRedirect";
+import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/PostCreateEditForm.module.css";
 
 function PostCreateForm() {
   // Redirect user if not logged in

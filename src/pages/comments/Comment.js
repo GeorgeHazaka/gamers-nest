@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+
 import { Media, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import CommentEditForm from "./CommentEditForm";
+import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
-import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { axiosRes } from "../../api/axiosDefaults";
-import CommentEditForm from "./CommentEditForm";
+import styles from "../../styles/Comment.module.css";
 
 const Comment = (props) => {
   const {
@@ -48,7 +50,9 @@ const Comment = (props) => {
         ...prevComments,
         results: prevComments.results.filter((comment) => comment.id !== id),
       }));
-    } catch (err) { }
+    } catch (err) {
+      // console.log(err);
+    }
   };
 
   // Function to handle comment liking

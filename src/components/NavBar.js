@@ -1,17 +1,19 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
+
+import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import logo from "../assets/gamers-nest-logo.png";
-import styles from "../styles/NavBar.module.css";
+import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
+
+import Avatar from "./Avatar";
+import logo from "../assets/gamers-nest-logo.png";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../contexts/CurrentUserContext";
-import Avatar from "./Avatar";
-import axios from "axios";
 import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
+import styles from "../styles/NavBar.module.css";
 import { removeTokenTimestamp } from "../utils/utils";
 
 const NavBar = () => {

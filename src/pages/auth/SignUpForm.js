@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
-import styles from "../../styles/SignInUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
 
+
+import axios from "axios";
 import {
   Form,
   Button,
@@ -14,9 +12,13 @@ import {
   Container,
   Alert
 } from "react-bootstrap";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
+import appStyles from "../../App.module.css";
 import { useRedirect } from "../../hooks/useRedirect";
+import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/SignInUpForm.module.css";
 
 const SignUpForm = () => {
   // Custom hook to redirect user if already logged in

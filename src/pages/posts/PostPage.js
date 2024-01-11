@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
 
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
-import appStyles from "../../App.module.css";
-import { useParams } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
-import Post from "./Post";
-import Comment from "../comments/Comment";
-
-import CommentCreateForm from "../comments/CommentCreateForm";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+import Row from "react-bootstrap/Row";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useParams } from "react-router";
+
+import Post from "./Post";
+import { axiosReq } from "../../api/axiosDefaults";
+import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { fetchMoreData } from "../../utils/utils";
+import Comment from "../comments/Comment";
+import CommentCreateForm from "../comments/CommentCreateForm";
+
+
 
 function PostPage() {
   const { id } = useParams();
@@ -64,7 +64,12 @@ function PostPage() {
           ) : null}
           {comments.results.length ? (
             <InfiniteScroll
-              children={comments.results.map((comment) => (
+              dataLength={comments.results.length}
+              loader={<Asset spinner />}
+              hasMore={!!comments.next}
+              next={() => fetchMoreData(comments, setComments)}
+            >
+              {comments.results.map((comment) => (
                 <Comment
                   key={comment.id}
                   {...comment}
@@ -72,11 +77,7 @@ function PostPage() {
                   setComments={setComments}
                 />
               ))}
-              dataLength={comments.results.length}
-              loader={<Asset spinner />}
-              hasMore={!!comments.next}
-              next={() => fetchMoreData(comments, setComments)}
-            />
+            </InfiniteScroll>
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (

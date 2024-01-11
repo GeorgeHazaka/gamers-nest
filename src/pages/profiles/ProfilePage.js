@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from "react";
 
+import { Image } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
-import Asset from "../../components/Asset";
-
-import styles from "../../styles/ProfilePage.module.css";
-import appStyles from "../../App.module.css";
-
+import Row from "react-bootstrap/Row";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { useParams } from "react-router";
+
 import { axiosReq } from "../../api/axiosDefaults";
+import appStyles from "../../App.module.css";
+import NoResults from "../../assets/no-results.png";
+import Asset from "../../components/Asset";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
-import { Image } from "react-bootstrap";
-import InfiniteScroll from "react-infinite-scroll-component";
-import Post from "../posts/Post";
+import styles from "../../styles/ProfilePage.module.css";
 import { fetchMoreData } from "../../utils/utils";
-import NoResults from "../../assets/no-results.png";
-import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import Post from "../posts/Post";
 
 function ProfilePage() {
   // State to manage the loaded status and profile posts
