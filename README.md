@@ -28,7 +28,10 @@ The project also utilises a Django Rest Framework web API, the repository for wh
     - [Fonts](#fonts)
   - [Features](#features)
     - [Existing Features](#existing-features)
+    - [Reusable React Components](#reusable-react-components)
     - [Features Left To Implement](#features-left-to-implement)
+  - [Frameworks libraries and dependencies](#frameworks-libraries-and-dependencies)
+  - [React features used to enhance user experience](#react-features-used-to-enhance-user-experience)
   - [User Experience](#user-experience)
   - [Testing](#testing)
     - [Manual Testing](#manual-testing)
@@ -162,6 +165,17 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
 
     ![Navbar toggler clicked](readme_assets/navbar-toggler-clicked.png)
 
+### Reusable React Components
+- `NavBar.js` component provides a navigation bar with dynamic content based on the user's authentication status. It includes features such as user sign-out, conditional rendering of icons, and respinsive design using Bootstrap components. The component encapsulates the application's navigation and user-related functionality.
+
+- `Asset.js` component is a reusable component for displaying assets in a flexible manner. It supports optional rendering of a loading spinner, an image, and a message, making it versatile for different use cases in a React application.
+
+- `Avatar.js` component is a functional component that represents an avatar. It renders an image (avatar) with optional styling, height, and text. The styling is applied using CSS modules, making it easy to manage and style avatars across the applicatiohn.
+
+- MoreDropdown and ProfileEditDropdown components provide dropdown menus with options for editing and managing items. They use Bootstrap's Dropdown component and include icons for a visually appealing user interface. The useHistory hook is used for navigation within the application.
+
+-  `NotFound.js` component is a simple React component designed to represent a "not found" page. It utilizes the Asset component to display an image (NoResults) along with a corresponding message. This component is typically used to handle scenarios where a user navigates to a page that doesn't exist.
+
 ### Features Left To Implement
 
 - Add followers section so that user can follow each other.
@@ -169,6 +183,31 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
 - Allow users to vote on a games for various reasons.
 - Add Live Streaming.
 - Add a page where users can buy games from.
+
+## Frameworks libraries and dependencies
+
+### React-Router-DOM
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom) - this library enables 'client side routing' for React web applications, and is used to implement basic routing in Gamers Nest.
+
+### ReactDOM
+- [react-dom](https://reactjs.org/docs/react-dom.html) - react-dom is used to manipulate the DOM outside of a specific component, and supports the user experience by enabling modal dialogs to be appended to the top level of the DOM (important for accessability) and alerts to be appended to specific components.
+
+### Axios
+- [Axios](https://www.npmjs.com/package/axios) - the axios library was chosen to simplify making HTTP requests to the REST API, and because it enables simple implementation of 'interceptors' which are used to request a refresh token in the event of a HTTP 401 error. This enhances the user experience beacuse an authenticated user remains signed in for up to 24 hours, rather than having to sign in again after five minutes.
+
+### JWT Decode
+- [jwt-decode](https://www.npmjs.com/package/jwt-decode) - used to decode Base64URL encoded JSON web tokens.
+
+### React Bootstrap Icons
+- [React Bootstrap](https://react-bootstrap.netlify.app/docs/components/accordion) - this library was selected for the high quality and simplicity of styles, and easy integration with React.
+
+## React features used to enhance user experience
+
+### useClickOutsideToggle
+- The useClickOutsideToggle hook manages toggle state for components, automatically collapsing when users click outside the specified DOM element. Ideal for dropdowns, modals, or any UI that should close on external interaction.
+
+### useRedirect
+- The useRedirect hook automatically redirects users based on their authentication status. If logged in, it redirects to the home page; if logged out, it also redirects to the home page, creating a seamless user experience.
 
 ## User Experience
 
