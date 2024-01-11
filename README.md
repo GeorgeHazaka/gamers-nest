@@ -26,6 +26,17 @@ User stories and testing outcomes are documented in the `user_stories` worksheet
 
 ## Design
 
+### Flow Diagram
+
+To structure and aid in creating the website, a basic flow diagram was created which is linked below.
+[Flow Diagram](readme_assets/Gamers-Nest-Diagram---Wireframe-cc-Premium17049453506321704945349.pdf)
+
+### Wirefremes
+
+Please check below, a link to wireframes for the site layout.
+
+[Wireframes](readme_assets/Gamers-Nest-Wireframes---Wireframe-cc-Premium17049436246261704943624.pdf)
+
 ### Colours
 
 - Three main colours were used in this website. The colours are:'
