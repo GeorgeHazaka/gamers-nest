@@ -249,3 +249,63 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
     | **Delete a comment**      | Clicks Three Dots icon and chooses Delete icon | Comment will be deleted | Clicked Three Dots icon and chose Delete icon | Comment is deleted |
 
 ### Validator Testing
+
+- CSS: Passed the code through a [css validator](https://jigsaw.w3.org/css-validator/validator.html.en) and confirmed that no errors were found.
+  - `index.css` No Errors.
+  - `App.module.css` No Errors.
+  - `Asset.module.css` No Errors.
+  - `Avatar.module.css` No Errors.
+  - `Button.module.css` No Errors.
+  - `Comment.module.css` No Errors.
+  - `CommentCreateEditForm.module.css` No Errors.
+  - `MoreDropdown.module.css` No Errors.
+  - `NavBar.module.css` No Errors.
+  - `NotFound.module.css` No Errors.
+  - `Post.module.css` No Errors.
+  - `PostCreateEditForm.module.css` No Errors.
+  - `PostsPage.module.css` No Errors.
+  - `Profile.module.css` No Errors.
+  - `ProfilePage.module.css` No Errors.
+  - `SignInUpForm.module.css` No Errors.
+
+
+### Unfixed Bugs
+When Signin or Signup buttons are clicked, I get the following error in the console:
+"POST https://drf-api-post-3b40e28fbca7.herokuapp.com/dj-rest-auth/token/refresh/ 401 (Unauthorized)"
+
+## Deployment
+
+----
+This project was deployed using Code Institute's mock terminal for Heroku
+
+- Steps for deployment:
+  - Fork or clone this repository
+    - To Fork:
+        1. Log in or sign up to Github.
+        2. Go to repository of this project, [YamYam Pizzeria](https://github.com/GeorgeHazaka/Yam-Yam-Pizza)
+        3. Click the Fork button in the upper right corner
+    - To Clone:
+        1. Log in or sign up to Github.
+        2. Go to repository of this project, [YamYam Pizzeria](https://github.com/GeorgeHazaka/Yam-Yam-Pizza)
+        3. Click on Code button and delect to clone with either HTTPS, SSH or GITHub CLI and copy the link shown.
+        4. Open the terminal in your code editor and change the working directory to the location you want to use for the cloned directory.
+        5. Type this command in the terminal:
+        ```bash
+        git clone { & THE LINK FROM STEP 3 }
+        ```
+        6. Set up a virtual environment, but if you are using Code Institute Template in Gitpod then you can skip this step.
+        7. Install the packages from the requirements.txt file by running the following command in the Terminal:
+
+        ```bash
+        pip3 install -r requirements.txt
+        ```
+
+  + Create a new Heroku app
+  + Link the Heroku app to the repository
+  + Click on **Deploy**
+
+### Content
+- The main code of Gamers Nest was taken from CodeInstitute [Moments Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/)
+
+### Media
+- All images were taken from open source sites
