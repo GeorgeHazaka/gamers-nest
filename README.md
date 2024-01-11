@@ -308,4 +308,4 @@ This project was deployed using Code Institute's mock terminal for Heroku
 - The main code of Gamers Nest was taken from CodeInstitute [Moments Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/)
 
 ### Media
-- All images were taken from open source sites
+- All images were taken from open source sites and CodeInstitute [Moments Walkthrough Project](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+RA101+2021_T3/courseware/70a8c55db0504bbdb5bcc3bfcf580080/953cd4e5015f483bb05263db3e740e19/)
