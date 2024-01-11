@@ -15,6 +15,29 @@ This is the repository for the React frontend of TribeHub.
 The project also utilises a Django Rest Framework web API, the repository for which is located [here](https://github.com/GeorgeHazaka/drf-api-post)
 
 ## Table of contents
+## Table of Contents
+- [Gamers Nest](#gamers-nest)
+  - [Project Goals](#project-goals)
+  - [Table of Contents](#table-of-contents)
+  - [Admin Credentials](#admin-credentials)
+  - [User Stories](#user-stories)
+  - [Design](#design)
+    - [Flow Diagram](#flow-diagram)
+    - [Wireframes](#wireframes)
+    - [Colours](#colours)
+    - [Fonts](#fonts)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left To Implement](#features-left-to-implement)
+  - [User Experience](#user-experience)
+  - [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+    - [Validator Testing](#validator-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+    - [Content](#content)
+    - [Media](#media)
+
 
 ## Admin Credentials
 
@@ -31,7 +54,7 @@ User stories and testing outcomes are documented in the `user_stories` worksheet
 To structure and aid in creating the website, a basic flow diagram was created which is linked below.
 [Flow Diagram](readme_assets/Gamers-Nest-Diagram---Wireframe-cc-Premium17049453506321704945349.pdf)
 
-### Wirefremes
+### Wireframes
 
 Please check below, a link to wireframes for the site layout.
 
@@ -268,6 +291,10 @@ The font is (DM Sans)[https://fonts.google.com/specimen/DM+Sans?query=DM+]
   - `ProfilePage.module.css` No Errors.
   - `SignInUpForm.module.css` No Errors.
 
+- ESLint JavaScript validator: All JavaScript files were validated using the ESLint JavaScript validator.
+
+- Accessibility I confirmed that the colors and fonts chosen are accessible and easy to read by running it through lighthouse in devtools.
+  ![Performance of the app](readme_assets/performance.png)
 
 ### Unfixed Bugs
 When Signin or Signup buttons are clicked, I get the following error in the console:
